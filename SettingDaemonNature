@@ -1,0 +1,28 @@
+//Java program to make a thread as Daemon thread and also to check whether is thread is Daemon or not 
+
+class MyThread extends Thread
+{
+  public MyThread()
+  {
+  }
+}
+
+
+//Driver code 
+
+class Test 
+{
+  public static void main(String[] args)
+  {
+    System.out.println(Thread.currentThread().isDaemon());
+    
+    //Observation: It is impossible to change Daemon nature of main thread because execution of main thread will always starts by JVM at the beginning
+    // Thread.currentThread().setDaemon(true); - RuntimeException saying IllegalThreadStateException 
+    
+    MyThread t = new MyThread();
+    System.out.println(t.isDaemon()); // false because daemon nature will be inherited from parent thread i.e., parent thread is main here
+    t.setDaemon(true);
+    System.out.println(t.isDaemon());
+   }
+ }
+    
