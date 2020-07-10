@@ -1,0 +1,67 @@
+// Java Program to demonstrate DeadLock situation 
+
+class FirstClass
+{
+  public synchronized void firstClassFirstMethod(SecondClass sc)
+  {
+    System.out.println("Thread starts execution of firstClassFirstMethod() method");
+    try
+    {
+      Thread.sleep(6000);
+    }
+    catch(InterruptedException e)
+    {
+    }
+    System.out.println("Thread1 trying to call secondClassSecondMethod() method");
+    sc.secondMethod();
+  }
+  public synchronized void firstClassSecondMethod()
+  {
+    System.out.println("Inside FirstClass, this is firstClassSecondMethod()");
+  }
+}
+
+
+class SecondClass
+{
+  public synchronized void secondClassFirstMethod(FirstClass fc)
+  {
+    System.out.println("Thread2 starts execution of secondClassFirstMethod() method");
+    try
+    {
+      Thread.sleep(6000);
+    }
+    catch(InterruptedException e)
+    {
+    } 
+    System.out.println("Thread2 trying to call firstClassSecondMethod() method");
+    fc.firstClassSecondMethod();
+  }
+  public synchronized void secondClassSecondMethod()
+  {
+    System.out.println("Inside SecondClass, this is secondClassSecondMethod()");
+  }
+}
+
+
+//Driver code 
+class DeadLock1 extends Thread 
+{
+  FirstClass f = new FirstClass();
+  SecondClass s = new SecondClass();
+  public void run()
+  {
+    s.secondClassFirstMethod(f);
+  }
+  public void deadLockClassMethod()
+  {
+    this.start();
+    f.firstClassFirstMethod(s);
+  }
+  public static void main(String[] args)
+  {
+    DeadLock1 d = new DeadLock1();
+    d.deadLockClassMethod();
+  }
+}
+
