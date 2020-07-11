@@ -1,0 +1,30 @@
+// Practical example to tell Daemon threads provide support for non-Daemon threads
+
+class MyThread extends Thread
+{
+  public void run()
+  {
+    for(int i = 0 ; i < 10 ; i++)
+    {
+      System.out.println("Child Thread");
+      try
+      {
+        Thread.sleep(2000);
+      }
+      catch(InterruptedException e)
+      {
+      }
+    }
+  }
+}
+
+class DaemonThreadDemo
+{
+  public static void main(String[] args)
+  {
+    MyThread t = new MyThread();
+    t.setDaemon(true); // Here main thread is non-Daemon thread and MyThread is Daemon thread. So, if main thread terminates automatically all Daemon threads will be terminated. Hence, we can say that Daemon threads provide support for non-Daemon threads 
+    t.start();
+    System.out.println("End of main thread");
+  }
+}
