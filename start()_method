@@ -1,0 +1,36 @@
+// start() method example 
+
+// Note: If we override start() method then our start() method will be executed just like a normal method and new thread won't be created
+// It is not recommended to override start() method 
+
+class MyThread extends Thread
+{
+  public MyThread()
+  {
+  }
+  public void start()
+  {
+    System.out.println("start method");
+  }
+  public void run()
+  {
+    System.out.println("run method");
+  }
+}
+
+
+//Driver class
+
+class Test 
+{
+  public static void main(String[] args)
+  {
+    MyThread t = new MyThread();
+    t.start();
+    System.out.println("main thread");
+  }
+}
+
+Output:
+start method 
+main thread 
