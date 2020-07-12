@@ -1,0 +1,29 @@
+// Getting and setting the name of a thread 
+
+class MyThread extends Thread
+{
+  public MyThread()
+  {
+  }
+}
+
+//Driver class
+
+class Test 
+{
+  public static void main(String[] args)
+  {
+    MyThread t = new MyThread();
+    System.out.println(t.getName());
+    t.setName("Tester Thread");
+    System.out.println(t.getName());
+    
+    //Getting the name of main thread
+    System.out.println(Thread.currentThread().getName());
+    
+    //setting the name for main thread
+    Thread.currentThread().setName("Driver Thread");
+    
+    System.out.println(Thread.currentThread().getName());
+  }
+}
