@@ -1,0 +1,37 @@
+// Java program to demonstrate ThreadLocal 
+
+//  ThreadLocal class provides thread local variables
+
+class CustomerThread extends Thread
+{
+  static Integer custId = 0 ;
+  private static ThreadLocal t = new ThreadLocal()
+  {
+    protected Integer initialValue()
+    {
+      return ++custId;
+    }
+  };
+  public CustomerThread(String name)
+  {
+    super(name);
+  }
+  public void run()
+  {
+    System.out.println(Thread.currentThread().getName()+" executing with customer Id: "+t.get());
+  }
+}
+
+
+class ThreadLocalDemo
+{
+  public static void main(String[] args)
+  {
+    CustomerThread c1 = new CustomerThread("Customer Thread-1");
+    CustomerThread c2 = new CustomerThread("Customer Thread-2");
+    c1.start();
+    c2.start();
+  }
+}
+
+//Note: In the above program for every customer thread a separate customerId will be maintained by thread local object
