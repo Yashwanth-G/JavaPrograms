@@ -1,0 +1,42 @@
+//Java program to demonstrate ThreadLocal class
+
+/* Parent threads ThreadLocal variable by default not available to the child thread. 
+*  If we want to make parent threads thread local value available to the child thread then we should go for 
+* "InheritableThreadLocal" class
+*/
+
+
+class ParentThread extends Thread
+{
+  public static InheritableThreadLocal t = new InheritableThreadLocal()
+  {
+    public Object childValue(Object p)
+    {
+      return "CC";
+    }
+  };
+  public void run()
+  {
+    t.set("PP");
+    System.out.println("Parent Thread value -- "+t.get());
+    ChildThread ct = new ChildThread();
+    ct.start();
+  }
+}
+
+class ChildThread extends Thread
+{
+  public void run()
+  {
+    System.out.println("Child Thread value -- "+ParentThread.t.get());
+  }
+}
+
+class ThreadDemo
+{
+  public static void main(String[] args)
+  {
+    ParentThread pt = new ParentThread();
+    pt.start();
+  }
+}
