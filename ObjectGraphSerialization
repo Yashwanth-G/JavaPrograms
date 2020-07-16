@@ -1,0 +1,43 @@
+/* Whenever we are serializing, the set of all objects which are reachable from that object will be serialized automatically 
+*  this group of objects is nothing but "ObjectGraph"
+*/
+
+// Java program to demonstrate ObjectGraphs in Serialization\\\
+
+import java.io.*;
+
+class Animal1 implements Serializable
+{
+  Animal2 a2 = new Animal2();
+}
+
+class Animal2 implements Serializable
+{
+  Animal3 a3 = new Animal3();
+}
+
+class Animal3 implements Serializable 
+{
+  int j = 10;
+}
+
+class SerilizableDemo
+{
+  public static void main(String[] args) throws Exception 
+  {
+    Animal1 a1 = new Animal();
+    FileOutputStream fos = new FileOutputStream("abc.ser");
+    ObjectOutputStream oos = new ObjectOutputStream(fos);
+    oos.writeObject(a1);
+    
+    FileInputStream fis = new FileInputStream("abc.ser");
+    ObjectInputStream ois = new ObjectInputStream(fis);
+    Animal1 a2 = new Animal1();
+    
+    System.out.println(d2.a2.a3.j);   //20
+  }
+}
+
+
+//Note: In the above program whenever we are serializing Animal1 object automatically Animal2 and Animal3 
+//        objects got serialized because these are part of ObjectGraph of Animal1
