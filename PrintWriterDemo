@@ -1,0 +1,28 @@
+// Java program to demonstrate PrintWriter
+
+import java.io.*;
+
+class PrintWriterDemo
+{
+  public static void main(String[] args) throws IOException
+  {
+    FileWriter fw = new FileWriter("abc.txt");
+    PrintWriter out = new PrintWriter(fw);
+    out.write(100);
+    out.println(100);
+    out.println(100);
+    out.println(true);
+    out.println(c);
+    out.println("Durga");
+    out.flush();
+    out.close();
+  }
+}
+
+
+/* Note: It is the most enchanced writer to write character data to the file. The main advantage of PrintWriter over 
+*       FileWriter and BufferedWriteris we can write any type of primitive data directly to the file.
+*   
+*
+*  PrintWriter can communicate directly with the file and can communicate via some writer object also.
+*/
