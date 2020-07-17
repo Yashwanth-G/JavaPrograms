@@ -25,4 +25,5 @@ class PrintWriterDemo
 *   
 *
 *  PrintWriter can communicate directly with the file and can communicate via some writer object also.
+*
 */
