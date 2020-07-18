@@ -1,0 +1,36 @@
+// Declaring our own Generic class
+
+class Test<T>
+{
+  T ob;
+  Test(T ob)
+  {
+    this.ob = ob;
+  }
+  public void show()
+  {
+    System.out.println("The type of ob: "+ob.getClass().getName());
+  }
+  public T getOb()
+  {
+    return ob;
+  }
+}
+
+class Tester
+{
+  public static void main(String[] args)
+  {
+    Test<String> t1 = new Test<String>("Yashwanth");
+    t1.show();
+    System.out.println(t1.getOb());
+    
+    Test<Integer> t2 = new Test<Integer>(10);
+    t1.show();
+    System.out.println(t1.getOb());
+    
+    Test<Double> t3 = new Test<Double>(10.5);
+    t1.show();
+    System.out.println(t1.getOb());
+  }
+}
