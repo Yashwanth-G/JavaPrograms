@@ -1,0 +1,36 @@
+// Java program to demonstrate enum 
+
+enum Pen
+{
+  black(10), red(15), green(20), blue ;
+  int price;
+  
+  // for black(10), red(15), green(20) the below constructor will be executed
+  Pen(int price)
+  {
+    this.price = price;
+  }
+  
+  // for blue the below constructor will be executed
+  Pen()
+  {
+    this.price = price;
+  }
+  
+  public int getPrice()
+  {
+    return price;
+  }
+}
+
+class Test 
+{
+  public static void main(String[] args)
+  {
+    Pen[] p = Pen.values();
+    for(Pen p1 : p)
+    {
+      System.out.println(p1+"---"+p1.getPrice());
+    }
+  }
+}
