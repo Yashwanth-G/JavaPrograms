@@ -1,0 +1,31 @@
+// Java program to demonstrate method specific enum
+
+enum Color
+{
+  BLUE, RED
+    {
+      // anonymous inner class (overriding the default constructor)
+      public void info()
+      {
+        System.out.println("Dangerous color");
+      }
+     }, GREEN;
+      public void info()
+      { 
+        System.out.println("Universal color");
+      }
+}
+
+class Test
+{
+  public static void main(String[] args)
+  {
+    Color[] c = Color.values();
+    
+    for(Color c1 : c)
+    {
+      c1.info();
+    }
+  }
+}
+  
