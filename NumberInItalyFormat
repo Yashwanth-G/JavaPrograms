@@ -1,0 +1,14 @@
+// Java program to display a number in Italy format
+
+import java.text.*;
+import java.util.*;
+
+class NumberFormatDemo
+{
+  public static void main(String[] args)
+  {
+    double d = 123456.789;
+    NumberFormat nf = NumberFormat.getInstance(Locale.ITALY);
+    System.out.println(nf.format(d));
+  }
+}
