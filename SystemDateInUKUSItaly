@@ -1,0 +1,18 @@
+// Java prrogram to display system date in UK, US, Italy styles
+
+import java.text.*;
+import java.util.*;
+
+class DateFormatDemo
+{
+  public static void main(String[] args)
+  {
+    DateFormat uk = DateFormat.getDateInstance(0, Locale.UK);
+    DateFormat us = DateFormat.getDateInstance(0, Locale.US);
+    DateFormat italy = DateFormat.getDateInstance(0, Locale.ITALY);
+    
+    System.out.println(uk.format(new Date()));
+    System.out.println(us.format(new Date()));
+    System.out.println(italy.format(new Date()));
+  }
+}
