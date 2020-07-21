@@ -1,0 +1,24 @@
+// Java program to display system date in all possible styles
+
+
+
+import java.text.*;
+import java.util.*;
+
+class DateFormatDemo
+{
+  public static void main(String[] args)
+  {
+    System.out.println(DateFormat.getDateInstance(0,Locale.US).format(new Date()));
+    System.out.println(DateFormat.getDateInstance(1,Locale.US).format(new Date()));
+    System.out.println(DateFormat.getDateInstance(2,Locale.US).format(new Date()));
+    System.out.println(DateFormat.getDateInstance(3,Locale.US).format(new Date()));
+  }
+}
+
+/*  Output:
+ *  Wednesday, July 21, 2020
+ *  July 21, 2020
+ *  Jul 21, 2020
+ *  7/7/20
+ */
