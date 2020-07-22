@@ -1,0 +1,20 @@
+//Java program for Extracting day, month, year from date object 
+
+import java.time.*;
+
+public class DateTimeDemo
+{
+  public static void main(String[] args)
+  {
+    LocalDate date = LocalDate.now();
+    System.out.println(date);
+    int dd = date.getDayOfMonth();
+    int mm = date.getMonthValue();
+    int yyyy = date.getYear();
+    
+    System.out.println(dd+"---"+mm+"---"+yyyy);
+    System.out.println("%d - %d - %d",dd,mm,yyyy);
+  }
+}
+
+// Note: The above program works only from jdk 1.8. DateTime API was introduced in Java from 1.8 version onwards
