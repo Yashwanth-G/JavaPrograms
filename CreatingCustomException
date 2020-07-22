@@ -1,0 +1,37 @@
+// Java program to create our own Exception
+
+class YoungAgeException extends RuntimeException
+{
+  YoungAgeException(String s)
+  {
+    super(s);
+  }
+}
+
+class OldAgeException extends RuntimeException
+{
+  OldAgeException(String s)
+  {
+    super(s);
+  }
+}
+
+class ExceptionDemo
+{
+  public static void main(String[] args)
+  {
+    int age = Integer.parseInt(args[0]);
+    if(age > 70)
+    {
+      throw new OldAgeException("You are too old");
+    }
+    else if(age < 18)
+    {
+      throw new YoungAgeException("You are too young");
+    }
+    else
+    {
+      System.out.println("Invalid age encountered");
+    }
+  }
+}
