@@ -1,0 +1,16 @@
+// Java program to get age of a person using DateTimeAPI
+
+import java.time.*;
+
+public class DemoTest
+{
+  public static void main(String[] args)
+  {
+    LocalDate birthday = LocalDate.of(1989,8,28);
+    LocalDate today = LocalDate.now();
+    
+    Period p = Period.between(birthday, today);
+    
+    System.out.println("Age is %d years %d months %d days", p.getYears(), p.getMonths(), p.getDays());
+  }
+}
