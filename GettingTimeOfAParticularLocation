@@ -1,0 +1,14 @@
+// Java program to get DateTime in LosAngeles America
+
+import java.time.*;
+
+public class Test
+{
+  public static void main(String[] args)
+  {
+    ZoneId la = ZoneId.of("America/Los_Angeles");
+    ZonedDateTime zt = ZonedDateTime(la);
+    
+    System.out.println(zt);
+  }
+}
