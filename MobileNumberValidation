@@ -1,0 +1,23 @@
+// Java program to check whether the given mobile number is valid or not 
+
+import java.util.regex.*;
+
+class RegexDemo
+{ 
+  public static void main(String[] args)
+  {
+    Pattern p = Pattern.compile("(0|91)[7-9][0-9]{9}");
+    Matcher m = p.matcher(args[0]);
+    
+    // We have to check total given number is valid or not but not partial match. If we do not write this condition, 
+    // then 929292929292929292 will return true but it is false
+    if(m.find() && m.group().equals(args[0]);
+    {
+      System.out.println("Valid");
+    }
+    else
+    {
+      System.out.println("Invalid");
+    }
+  }
+}
