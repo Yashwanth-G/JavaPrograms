@@ -1,0 +1,30 @@
+// Java program to get class specific details using Reflection API
+
+public abstract class Employee implements java.io.Serializable, Cloneable
+{
+}
+
+//Driver class
+
+import java.lang.reflect.*;
+
+class Test
+{
+  public static void main(String[] args) throws Exception
+  {
+    Class c = Class.forName("Employee");
+    System.out.println("Name: "+c.getName());
+    System.out.println("Super class: "+c.getSuperclass().getName());
+    
+    Class[] c1 = c.getInterfaces();
+    
+    System.out.print("Interfaces List:");
+    for(Class cls: cl)
+    {
+      System.out.print(cls.getName()+" ");
+    }
+    System.out.println();
+    int i = c.getModifiers();
+    System.out.println("Access Modifiers: "+Modifier.toString(i));
+  }
+}
