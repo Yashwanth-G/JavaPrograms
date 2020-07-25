@@ -1,0 +1,33 @@
+// Java program to get metadata of variables from java program using Reflection API
+
+public class Employee
+{
+  public static int eno = 9999;
+  static String ename = "Yashwanth";
+  public static String eaddr = "Hyd";
+}
+
+//Driver class
+
+import java.lang.reflect.*;
+
+public class Test
+{
+  public static void main(String[] args) throws Exception
+  { 
+    Employee e = new Employee();
+    Class c = e.getClass();
+    Field[] flds = c.getDeclaredFields();
+    
+    for(Field f : flds)
+    {
+      System.out.println("Name: "+f.getName());
+      System.out.println("Data Type: "+f.getType().getName());
+      
+      //Access Modifiers
+      int i = f.getModifiers();
+      System.out.println("Access Modifiers: "+Modifier.toString());
+      System.out.println("Value: "+f.get(f));
+    }
+  }
+}
