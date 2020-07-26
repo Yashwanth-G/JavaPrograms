@@ -1,0 +1,24 @@
+// Java program to demonstrate Automatic Promotion in Overloading
+
+class Test
+{
+  public void m1(int i)
+  {
+    System.out.println("int-arg");
+  }
+  public void m1(float i)
+  {
+    System.out.println("float-arg");
+  }
+  public static void main(String[] args)
+  {
+    Test t = new Test();
+    t.m1(10); //int-arg
+    t.m1(10.5f); // float-arg
+    
+    //The below is the example of Automatic Promotion
+    t.m1('a'); // int-arg
+    t.m1(10l); // float-arg
+    t.m1(10.5);
+  }
+}
