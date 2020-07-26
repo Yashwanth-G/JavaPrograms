@@ -1,0 +1,48 @@
+public class Employee
+{
+  public Employee(int eno, String ename, String eaddr) throws ClassCastException, ArithmeticException
+  {
+  }
+  public Employee(int eno, String ename) throws java.rmi.RemoteException, java.sql.SQLException
+  {
+  }
+  public Employee(int eno) throws InterruptedException
+  {
+  }
+}
+
+//Driver class
+
+import java.lang.reflect.*;
+
+class Test
+{
+  public static void main(String[] args) throws Exception
+  {
+    Constructor c = Employee.class;
+    Constructor[] con = c.getDeclaredConstructors();
+    for(Constructor c : con)
+    {
+      System.out.println("Name: "+c.getName());
+      int i = c.getModifiers();
+      System.out.println("Modifiers: "+Modifier.toString(i));
+      Class[] cl1 = c.getParameterTypes();
+      System.out.println("Parameter Types: ");
+      for(Class c1 : cl1)
+      {
+        System.out.println(c1.getName()+" ");
+      }
+      System.out.println();
+      Class[] cl2 = c.getExceptionTypes();
+      System.out.println("Exception Type");
+      for(Class c2 : cl2)
+      {
+        System.out.println(c2.getName()+" ");
+      }
+      System.out.println();
+      System.out.println("------------");
+    }
+  }
+}
+
+
