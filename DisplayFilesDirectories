@@ -1,0 +1,20 @@
+// Java program to display names and directories in the given path
+
+import java.io.*;
+
+class Test
+{
+  public static void  main(String[] args) throws Exception
+  {
+    int count = 0;
+    File f = new File("C:\\durga_classes");
+    String[] s = f.list();
+    
+    for(String s1 : s)
+    {
+      count++;
+      System.out.println(s1);
+    }
+    System.out.println("Total number: "+count);
+  }
+}
