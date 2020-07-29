@@ -1,0 +1,15 @@
+// Java program to demonstrate Internal Implementation of cursors
+
+import java.util.*;
+
+class CursorDemo
+{
+  public static void main(String[] args)
+  {
+    Vector v = new Vector();
+    Enumeration e = v.elements();
+    ListIterator litr = v.listIterator();
+    System.out.println(e.getClass().getName());
+    System.out.println(litr.getClass().getName());
+  }
+}
