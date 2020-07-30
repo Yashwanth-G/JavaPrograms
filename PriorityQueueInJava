@@ -1,0 +1,33 @@
+// Java program to demonstrate the working of 
+// priority queue in Java 
+
+import java.util.*; 
+
+class Test { 
+	public static void main(String args[]) 
+	{ 
+		// Creating empty priority queue 
+		PriorityQueue<Integer> pQueue 
+			= new PriorityQueue<Integer>(); 
+
+		// Adding items to the pQueue using add() 
+		pQueue.add(10); 
+		pQueue.add(20); 
+		pQueue.add(15); 
+
+		// Printing the top element of PriorityQueue 
+		System.out.println(pQueue.peek()); 
+
+		// Printing the top element and removing it 
+		// from the PriorityQueue container 
+		System.out.println(pQueue.poll()); 
+
+		// Printing the top element again 
+		System.out.println(pQueue.peek()); 
+	} 
+} 
+
+
+// Note:  A PriorityQueue is used when the objects are supposed to be processed based on the priority. It is known that a queue follows the First-In-First-Out algorithm,
+//        but sometimes the elements of the queue are needed to be processed according to the priority and this class is used in these cases. 
+//        The PriorityQueue is based on the priority heap. 
