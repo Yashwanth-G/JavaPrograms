@@ -1,0 +1,33 @@
+// Java Program Demonstrate LinkedTransferQueue 
+
+import java.util.concurrent.LinkedTransferQueue; 
+import java.util.*; 
+
+public class LinkedTransferQueueDemo { 
+	public static void main(String[] args) throws InterruptedException 
+	{ 
+		// create object of LinkedTransferQueue 
+		// using LinkedTransferQueue() constructor 
+		LinkedTransferQueue<Integer> LTQ = new LinkedTransferQueue<Integer>(); 
+
+		// Add numbers to end of LinkedTransferQueue 
+		LTQ.add(7855642); 
+		LTQ.add(35658786); 
+		LTQ.add(5278367); 
+		LTQ.add(74381793); 
+
+		// print Dequee 
+		System.out.println("Linked Transfer Queue1: "+ LTQ); 
+
+		// create object of LinkedTransferQueue 
+		// using LinkedTransferQueue(Collection c) constructor 
+		LinkedTransferQueue<Integer> LTQ2 = new LinkedTransferQueue<Integer>(LTQ); 
+
+		// print Dequee 
+		System.out.println("Linked Transfer Queue2: "+ LTQ2); 
+	} 
+} 
+
+
+// Note: The elements in the LinkedTransferQueue are ordered in FIFO order, with the head pointing to the element that has been on the Queue for the longest
+//       time and the tail pointing to the element that has been on the queue for the shortest time.
