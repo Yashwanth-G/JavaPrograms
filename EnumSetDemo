@@ -25,5 +25,4 @@ public class Example
 	} 
 } 
 
-
 // Note: EnumSet is one of the specialized implementation of Set interface for use with the enumeration type.
