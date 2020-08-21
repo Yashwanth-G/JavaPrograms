@@ -2,7 +2,8 @@
 
 import java.util.*; 
 
-public class BlockingQueue { 
+public class BlockingQueue 
+{ 
 
 	private List queue = new LinkedList(); 
 	private int limit = 10; 
