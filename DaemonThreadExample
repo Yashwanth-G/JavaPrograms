@@ -1,5 +1,6 @@
 // Practical example to tell Daemon threads provide support for non-Daemon threads
 
+
 class MyThread extends Thread
 {
   public void run()
